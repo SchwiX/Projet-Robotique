@@ -125,7 +125,7 @@ public function check_no_doublon($nom_per) {
 
 
 
-function set_id_emp($id_per) {
+function set_id_per($id_per) {
         $this->id_per = $id_per;
     }
 
