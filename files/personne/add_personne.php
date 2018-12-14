@@ -88,7 +88,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
+                            <!--<div class="form-group row">
                                 <label for="pass_per" class="col-sm-2 col-form-label">Password</label>
                                 <div class="col-sm-10">
                                     <input type="password" class="form-control" id="pass_per" placeholder="Password">
@@ -102,7 +102,7 @@
                                 </div>
                             </div>
                             
-                        </div>
+                        </div>-->
 
                         <!-- Bouton submit et reset -->
                         <div class="form-group row">
