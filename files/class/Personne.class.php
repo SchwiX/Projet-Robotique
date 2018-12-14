@@ -49,28 +49,22 @@ class Personne {
         }
         return true;
     }
-    
-    
-    
-    
-    
-    public function __toString(){
+
+    public function __toString() {
         $str = "\n<pre>\n";
-        foreach($this AS $key => $val){
-            if($key != "pdo"){
-                $str .= "\t".$key;
+        foreach ($this AS $key => $val) {
+            if ($key != "pdo") {
+                $str .= "\t" . $key;
                 $lengh_key = strlen($key);
-                for($i=strlen($key);$i<20;$i++){
+                for ($i = strlen($key); $i < 20; $i++) {
                     $str .= "&nbsp;";
                 }
-                $str .= "=>&nbsp;&nbsp;&nbsp;".$val."\n";
+                $str .= "=>&nbsp;&nbsp;&nbsp;" . $val . "\n";
             }
         }
         $str .= "\n</pre>";
         return $str;
     }
-
-}
 
     //Ajout d'une personne dans la base
     public function add($tab) {
@@ -104,7 +98,7 @@ class Personne {
         return $this->pdo->lastInsertId();
     }
 
-public function check_no_doublon($nom_per) {
+    public function check_no_doublon($nom_per) {
 
         $query = "SELECT * FROM personnes WHERE  = :";
         try {
@@ -123,27 +117,8 @@ public function check_no_doublon($nom_per) {
         }
     }
 
-
-
-function set_id_per($id_per) {
+    function set_id_per($id_per) {
         $this->id_per = $id_per;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
