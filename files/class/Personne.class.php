@@ -19,10 +19,14 @@ class Personne {
     private $email;
     private $password;
     private $news_letter;
+    
+    private $pdo;
 
     public function __construct($id = null) {
 
-        parent::__construct();
+        //parent::__construct();
+        $this->pdo = new PDO('mysql:dbname=' . BASE_NAME . ';host=' . SQL_HOST, SQL_USER, SQL_PASSWORD, 
+                           array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC));
 
         if ($id) {
             $this->set_id_per($id);
@@ -31,7 +35,7 @@ class Personne {
     }
 
     public function init() {
-        $query = "SELECT * FROM t_personnes WHERE id_per=:id_per";
+        $query = "SELECT * FROM personnes WHERE id_per=:id_per";
         try {
             $stmt = $this->pdo->prepare($query);
             $args[':id_per'] = $this->get_id_per();
@@ -48,6 +52,22 @@ class Personne {
         }
         return true;
     }
+    
+    
+    public function get_all(){
+        $query = "SELECT * FROM `personnes` ORDER BY `nom_per`";
+        try {
+            $stmt = $this->pdo->prepare($query);
+            
+            $stmt->execute();
+            $tab = $stmt->fetchAll();
+            
+            return $tab;
+        }catch(Exception $e){
+            return false;
+        }
+    }
+    
     
     public function __toString(){
         $str = "\n<pre>\n";
