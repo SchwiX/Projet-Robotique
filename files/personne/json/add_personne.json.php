@@ -1,12 +1,12 @@
 <?php
 //$aut="ADM_USR";
-//header('Content-Type: application/json');
-//session_start();
+header('Content-Type: application/json');
+session_start();
 require("./../../config/config.inc.php");
 require_once(WAY . "./includes/secure.inc.php");
 require_once(WAY . "/includes/autoload.inc.php");
 
-//print_r($_POST);
+
 $per = new Personne();
 
 
@@ -29,10 +29,7 @@ $per = new Personne();
     $tab['message']['texte'] = "Existe déjà.";
     $tab['message']['type'] = "danger";
 }
-    
 
-
-//print_r($_POST);
 
 echo json_encode($tab);
 ?>

@@ -1,11 +1,26 @@
 $(function () {
-    $("#add_per_from").validate({
+    $("#add_per_form").validate({
             rules: {
                 nom_per: {
                     required: true
                 },
                 prenom_per: {
                     required: true
+                },
+                date_per: {
+                    required: false
+                },
+                tel_per: {
+                    required: false
+                },
+                addr_per: {
+                    required: false
+                }, 
+                lieu_per: {
+                    required: false
+                },
+                npa_per: {
+                    required: false
                 },
                 mail_per: {
                     required: true
@@ -34,7 +49,7 @@ $(function () {
                         addr_per: $("#addr_per").val(),
                         lieu_per: $("#lieu_per").val(),
                         npa_per: $("#npa_per").val(),
-                        mail_per: $("#mail_per").val(),
+                        mail_per: $("#mail_per").val()
                     },
                     function result(data, status) {
                         //Ajoute le message

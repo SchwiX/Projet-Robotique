@@ -17,10 +17,10 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-        
+
         <!--- JQuery validate -->
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-        
+
     </head>
     <body>
 
@@ -45,14 +45,14 @@
                                     <input type="text" class="form-control" id="prenom_per" placeholder="Prénom">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group row">
                                 <label for="date_per" class="col-sm-2 col-form-label">Date de naissance</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="date_per" placeholder="Date de naissance">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group row">
                                 <label for="tel_per" class="col-sm-2 col-form-label">Téléphone</label>
                                 <div class="col-sm-10">
@@ -66,7 +66,7 @@
                                     <input type="text" class="form-control" id="addr_per" placeholder="Adresse">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group row">
                                 <label for="lieu_per" class="col-sm-2 col-form-label">Ville</label>
                                 <div class="col-sm-10">
@@ -80,7 +80,7 @@
                                     <input type="text" class="form-control" id="npa_per" placeholder="NPA">
                                 </div>
                             </div>
-                            
+
                             <div class="form-group row">
                                 <label for="mail_per" class="col-sm-2 col-form-label">Email</label>
                                 <div class="col-sm-10">
@@ -104,19 +104,19 @@
                             
                         </div>-->
 
-                        <!-- Bouton submit et reset -->
-                        <div class="form-group row">
-                            <div class="col-sm-offset-8 col-sm-2">
-                                <input type="submit" class="form-control btn btn-primary submit" id="submit_conf" value="Ajouter">
-                            </div>
-                            <div class="col-sm-2">
-                                <input type="reset" class="form-control btn btn-warning" id="reset_conf" value="Annuler">
+                            <!-- Bouton submit et reset -->
+                            <div class="form-group row">
+                                <div class="col-sm-offset-8 col-sm-2">
+                                    <input type="submit" class="form-control btn btn-primary submit" id="submit_conf" value="Ajouter">
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="reset" class="form-control btn btn-warning" id="reset_conf" value="Annuler">
+                                </div>
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>    
-        </div>
+                </div>    
+            </div>
 
     </body>
     <script src="./js/add_personne.js"></script>
