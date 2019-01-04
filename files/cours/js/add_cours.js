@@ -1,5 +1,5 @@
-$(function () {
-    $("#add_cours_from").validate(
+$(function() {
+    $("#add_cours_form").validate(
             {
                 rules: {
                     nom_cou: {
@@ -35,10 +35,13 @@ $(function () {
                     $.post(
                             "./json/add_cours.json.php?_=" + Date.now(),
                             {
-                                nom_per: $("#nom_cou").val(),
-                                prenom_per: $("#mat").val(),
-                                mail_per: $("#heure_debut").val(),
-                                pass_per: $("#heure_fin").val()
+                                nom_cou: $("#nom_cou").val(),
+                                mat: $("#mat").val(),
+                                heure_debut: $("#heure_debut").val(),
+                                heure_fin: $("#heure_fin").val(),
+                                ref_prof: $("#ref_prof").val(),
+                                ref_classe: $("#ref_classe").val(),
+                                ref_salle_classe: $("#ref_salle_classe").val()
 
                             },
                             function result(data, status) {
@@ -49,6 +52,11 @@ $(function () {
                                 if (data.reponse) {
                                     $("#add_cours_form").trigger("reset");
                                 }
+                                
+                                //Ajoute le message
+                                $("#alert .message").html(data.message.texte);
+                                $("#alert").addClass("alert-"+data.message.type);
+                                $("#alert").css("display", "block");
                             }
                     );
 

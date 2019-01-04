@@ -1,0 +1,15 @@
+table{
+    border: solid 5px;
+}
+
+tr, td, th{
+    border: solid 2px;
+    text-align: center;
+}
+th{
+    background-color: lightgray;
+}
+td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
