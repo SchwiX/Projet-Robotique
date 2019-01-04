@@ -15,12 +15,12 @@ class Cours EXTENDS Projet{
 
     private $id_cou;
     private $nom_cou;
-    private $mat;
+    private $mat_cou;
     private $heure_debut;
     private $heure_fin;
     private $ref_prof;
     private $ref_classe;
-    private $ref_salle_classe;
+    private $ref_salle;
 
     public function __construct($id = null) {
 
@@ -80,22 +80,22 @@ class Cours EXTENDS Projet{
     public function add($tab) {
         //$tab d'arguments
         $args['nom_cou'] = $tab['nom_cou'];
-        $args['mat'] = $tab['mat'];
+        $args['mat_cou'] = $tab['mat_cou'];
         $args['heure_debut'] = $tab['heure_debut'];
         $args['heure_fin'] = $tab['heure_fin'];
         $args['ref_prof'] = $tab['ref_prof'];
         $args['ref_classe'] = $tab['ref_classe'];
-        $args['ref_salle_classe'] = $tab['ref_salle_classe'];
+        $args['ref_salle'] = $tab['ref_salle'];
 
         //requête
         $query = "INSERT INTO cours SET "
                 . "nom_cou = :nom_cou, "
-                . "mat = :mat, "
+                . "mat_cou = :mat_cou, "
                 . "heure_debut = :heure_debut, "
                 . "heure_fin = :heure_fin, "
                 . "ref_prof = :ref_prof, "
                 . "ref_classe = :ref_classe, "
-                . "ref_salle_classe = :ref_salle_classe";
+                . "ref_salle = :ref_salle";
 
         try {
             $stmt = $this->pdo->prepare($query);

@@ -52,7 +52,7 @@
                         <div class="form-group row">
                             <label for="mat" class="col-sm-2 col-form-label">Matière</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="mat" name="mat" placeholder="Matière enseignée">
+                                <input type="text" class="form-control" id="mat" name="mat_cou" placeholder="Matière enseignée">
                             </div>
                         </div>
 
@@ -112,7 +112,7 @@
                         <div class="form-group row">
                             <label for="ref_classe" class="col-sm-2 col-form-label">Salle de classe</label>
                             <div class="col-sm-10">
-                                <select class="form-control" id="ref_salle_classe" name="ref_salle_classe">
+                                <select class="form-control" id="ref_salle_classe" name="ref_salle">
                                 <?php
                                     
                                     $query_salle_classe = "SELECT id_salle_classe, nom_salle_classe FROM salle_classe";
