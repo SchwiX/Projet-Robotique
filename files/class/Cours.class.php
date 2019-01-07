@@ -11,7 +11,7 @@
  *
  * @author cp-16mer
  */
-class Cours EXTENDS Projet{
+class Cours EXTENDS Projet {
 
     private $id_cou;
     private $nom_cour;
@@ -54,27 +54,6 @@ class Cours EXTENDS Projet{
         }
         return true;
     }
-    
-    
-    
-    
-    
-    public function __toString(){
-        $str = "\n<pre>\n";
-        foreach($this AS $key => $val){
-            if($key != "pdo"){
-                $str .= "\t".$key;
-                $lengh_key = strlen($key);
-                for($i=strlen($key);$i<20;$i++){
-                    $str .= "&nbsp;";
-                }
-                $str .= "=>&nbsp;&nbsp;&nbsp;".$val."\n";
-            }
-        }
-        $str .= "\n</pre>";
-        return $str;
-    }
-
 
     //Ajout d'un cours dans la base
     public function add($tab) {
@@ -105,8 +84,7 @@ class Cours EXTENDS Projet{
         }
         return $this->pdo->lastInsertId();
     }
-    
-    
+
     public function check($nom_cour) {
         $query = "SELECT nom_cour FROM cours WHERE nom_cour=:nom_cour LIMIT 1";
 
@@ -124,9 +102,8 @@ class Cours EXTENDS Projet{
             return false;
         }
     }
-    
 
-public function check_no_doublon($nom_cour) {
+    public function check_no_doublon($nom_cour) {
 
         $query = "SELECT * FROM cours WHERE nom_cour = :nom_cour LIMIT 1";
         try {
@@ -145,57 +122,79 @@ public function check_no_doublon($nom_cour) {
         }
     }
 
+    public function get_profs(){
+        $query = "SELECT Prof.id_prof, Per.nom_per, Per.prenom_per "
+                . "FROM `ref_prof` AS Prof "
+                . "JOIN personnes AS Per ON Prof.ref_per = Per.id_per";
+        
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute();
+            $tab = $stmt->fetchAll();
+            return($tab);
+        } catch (Exception $e) {
+            return false;
+        }
+    }
 
-function set_id_cou($id_cou) {
+    public function get_classes(){
+        
+    }
+    
+    public function get_salles(){
+        
+    }
+
+    public function __toString() {
+        $str = "\n<pre>\n";
+        foreach ($this AS $key => $val) {
+            if ($key != "pdo") {
+                $str .= "\t" . $key;
+                $lengh_key = strlen($key);
+                for ($i = strlen($key); $i < 20; $i++) {
+                    $str .= "&nbsp;";
+                }
+                $str .= "=>&nbsp;&nbsp;&nbsp;" . $val . "\n";
+            }
+        }
+        $str .= "\n</pre>";
+        return $str;
+    }
+
+    function set_id_cou($id_cou) {
         $this->id_cou = $id_cou;
     }
-    
-    function set_nom_cou($nom_cour){
+
+    function set_nom_cou($nom_cour) {
         $this->nom_cour = $nom_cour;
     }
-    
-    function set_mat($mat_cour){
+
+    function set_mat($mat_cour) {
         $this->mat_cour = $mat_cour;
     }
-    
-    function set_heure_debut($hrs_debut){
+
+    function set_heure_debut($hrs_debut) {
         $this->hrs_debut = $hrs_debut;
     }
-    
-    function set_heure_fin($hrs_fin){
+
+    function set_heure_fin($hrs_fin) {
         $this->hrs_fin = $hrs_fin;
     }
-    
-    function set_ref_prof($ref_prof){
+
+    function set_ref_prof($ref_prof) {
         $this->ref_prof = $ref_prof;
     }
-    
-    function set_ref_classe($ref_classe){
+
+    function set_ref_classe($ref_classe) {
         $this->ref_classe = $ref_classe;
     }
-    
-    function set_ref_salle_classe($ref_salle){
+
+    function set_ref_salle_classe($ref_salle) {
         $this->ref_salle = $ref_salle;
     }
-    
-function get_id_cou(){
-    return $this->id_cou;
+
+    function get_id_cou() {
+        return $this->id_cou;
+    }
+
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
