@@ -22,13 +22,13 @@
         <!--- JQuery validate -->
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 
-        <?php 
-        require "./../config/config.inc.php"; 
+        <?php
+        require "./../config/config.inc.php";
         require_once(WAY . "/includes/autoload.inc.php");
         ?>
         <?php
         $Cour = new Cours();
-        
+
         $pdo = new PDO("mysql:dbname=" . BASE_NAME . ";host=" . SQL_HOST, SQL_USER, SQL_PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC));
         ?>
@@ -81,9 +81,9 @@
                                     <select class="form-control" id="ref_prof" name="ref_prof">
                                         <?php
                                         $Arr_Prof = $Cour->get_profs();
-                                        
-                                        foreach($Arr_Prof AS $prof){
-                                          echo "<option value=\"" . $prof['id_prof'] . "\">" . $prof['nom_per'] . " " . $prof['prenom_per'] . "</option>";
+
+                                        foreach ($Arr_Prof AS $prof) {
+                                            echo "<option value=\"" . $prof['id_prof'] . "\">" . $prof['nom_per'] . " " . $prof['prenom_per'] . "</option>";
                                         }
                                         ?>
                                     </select>
@@ -94,16 +94,13 @@
                                 <label for="ref_classe" class="col-sm-2 col-form-label">Classes</label>
                                 <div class="col-sm-10">
                                     <select class="form-control" id="ref_classe" name="ref_classe">
-<?php
-$query_classe = "SELECT id_cla, nom_cla FROM classe";
-$stmt = $pdo->prepare($query_classe);
-$stmt->execute();
-$tab_classe = $stmt->fetchALL();
+                                        <?php
+                                        $Arr_classes = $Cour->get_classes();
 
-foreach ($tab_classe AS $classe) {
-    echo "<option name=\"" . $classe['id_cla'] . "\" id=\"" . $classe['id_cla'] . "\">" . $classe['nom_cla'] . "</option>";
-}
-?>
+                                        foreach ($Arr_classes AS $classe) {
+                                            echo "<option value=\"" . $classe['id_cla'] . "\">" . $classe['nom_cla'] . "</option>";
+                                        }
+                                        ?>
                                         <!--<option value="3">test</option>-->
                                     </select>
                                 </div>
@@ -113,16 +110,13 @@ foreach ($tab_classe AS $classe) {
                                 <label for="ref_salle" class="col-sm-2 col-form-label">Salle de classe</label>
                                 <div class="col-sm-10">
                                     <select class="form-control" id="ref_salle" name="ref_salle">
-<?php
-$query_salle_classe = "SELECT id_salle, nom_salle, lieu_salle FROM salle";
-$stmt = $pdo->prepare($query_salle_classe);
-$stmt->execute();
-$tab_salle_classe = $stmt->fetchALL();
+                                        <?php
+                                        $Arr_salles = $Cour->get_salles();
 
-foreach ($tab_salle_classe AS $salle) {
-    echo "<option name=\"" . $salle['id_salle'] . "\" id=\"" . $salle['id_salle'] . "\">" . $salle['nom_salle'] . ", " . $salle['lieu_salle'] . "</option>";
-}
-?>
+                                        foreach ($Arr_salles AS $sal) {
+                                            echo "<option value=\"" . $sal['id_salle'] . "\">" . $sal['nom_salle'] . ", " . $sal['lieu_salle'] . "</option>";
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>

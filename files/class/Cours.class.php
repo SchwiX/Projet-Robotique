@@ -138,11 +138,29 @@ class Cours EXTENDS Projet {
     }
 
     public function get_classes(){
+        $query = "SELECT * FROM `classe`";
         
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute();
+            $tab = $stmt->fetchAll();
+            return($tab);
+        } catch (Exception $e) {
+            return false;
+        }
     }
     
     public function get_salles(){
+        $query = "SELECT * FROM `salle`";
         
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute();
+            $tab = $stmt->fetchAll();
+            return($tab);
+        } catch (Exception $e) {
+            return false;
+        }
     }
 
     public function __toString() {
