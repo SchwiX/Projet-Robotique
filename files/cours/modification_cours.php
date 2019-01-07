@@ -42,7 +42,7 @@
                 Liste de tous les cours
             </div>
             <div class="body">
-                <form id="aff_cours_form" method="post" action="./affichage_cours.php">
+                <form id="aff_cours_form" method="post" action="./modification_cours.php">
                     <table>
                         <div class="form-group row">   
                         <div class="h4">
@@ -64,7 +64,8 @@
                         </div>
                         </table>
                         <div class="form-group row">
-                        <table>    
+                        <table>
+                        <form id="suppModif" method="post" action="./suppModif.php">
                         <?php
                         /*function affichage_all_cours($order){
                         
@@ -82,12 +83,13 @@
                             echo "<tr><th>Nom du cours</th><th>Matière enseignée</th><th>Heure du début de la leçon</th><th>Professeur</th><th>Salle de classe</th></tr>";
                             foreach($tab_affichage AS $affichage){
                                 echo "<tr>";
-                                echo "<td>" . $affichage['nom_cou'] . "</td>";
-                                echo "<td>" . $affichage['mat'] . "</td>";
-                                echo "<td>" . $affichage['heure_debut'] . "</td>";
+                                echo "<td>" . $affichage['nom_cour'] . "</td>";
+                                echo "<td>" . $affichage['mat_cour'] . "</td>";
+                                echo "<td>" . $affichage['hrs_debut'] . "</td>";
                                 echo "<td>" . $affichage['ref_prof'] . "</td>";
-                                echo "<td>" . $affichage['ref_salle_classe'] . "</td>";
-                                echo "<td>" . "<input type=\"submit\">" . "</td>";
+                                echo "<td>" . $affichage['ref_salle'] . "</td>";
+                                echo "<td>" . "<input type=\"submit\" value=\"Modifier\" name=\"modif\">";
+                                echo "<td>" . "<input type=\"submit\" value=\"Supprimer\"" . "href=\"suppModif.php?id=\"" . $affichage['id_cou'] . "\">" . "</td>";
                                 echo "</tr>";
                             }
                         }
@@ -104,7 +106,8 @@
                         */
                         
                         
-                      ?> 
+                      ?>                             
+                        </form>    
                     </table>
                     </div>
                     

@@ -81,11 +81,11 @@
                             echo "<tr><th>Nom du cours</th><th>Matière enseignée</th><th>Heure du début de la leçon</th><th>Professeur</th><th>Salle de classe</th></tr>";
                             foreach($tab_affichage AS $affichage){
                                 echo "<tr>";
-                                echo "<td>" . $affichage['nom_cou'] . "</td>";
-                                echo "<td>" . $affichage['mat'] . "</td>";
-                                echo "<td>" . $affichage['heure_debut'] . "</td>";
+                                echo "<td>" . $affichage['nom_cour'] . "</td>";
+                                echo "<td>" . $affichage['mat_cour'] . "</td>";
+                                echo "<td>" . $affichage['hrs_debut'] . "</td>";
                                 echo "<td>" . $affichage['ref_prof'] . "</td>";
-                                echo "<td>" . $affichage['ref_salle_classe'] . "</td>";
+                                echo "<td>" . $affichage['ref_salle'] . "</td>";
                                 echo "</tr>";
                             }
                         }

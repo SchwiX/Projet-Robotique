@@ -2,30 +2,30 @@ $(function() {
     $("#add_cours_form").validate(
             {
                 rules: {
-                    nom_cou: {
+                    nom_cour: {
                         required: true
                     },
-                    mat: {
+                    mat_cour: {
                         required: true
                     },
-                    heure_debut: {
+                    hrs_debut: {
                         required: true
                     },
-                    heure_fin: {
+                    hrs_fin: {
                         required: true
                     }
                 },
                 messages: {
-                    nom_cou: {
+                    nom_cour: {
                         required: "Veuillez donner un nom au cours"
                     },
-                    mat: {
+                    mat_cour: {
                         required: "Veuillez ajouter une matière au cours"
                     },
-                    heure_debut: {
+                    hrs_debut: {
                         required: "Veuillez indiquer l'heure de début"
                     },
-                    heure_fin: {
+                    hrs_fin: {
                         required: "Veuillez indiquer l'heure de fin"
                     }
                 },
@@ -35,13 +35,13 @@ $(function() {
                     $.post(
                             "./json/add_cours.json.php?_=" + Date.now(),
                             {
-                                nom_cou: $("#nom_cou").val(),
-                                mat: $("#mat").val(),
-                                heure_debut: $("#heure_debut").val(),
-                                heure_fin: $("#heure_fin").val(),
+                                nom_cour: $("#nom_cour").val(),
+                                mat_cour: $("#mat_cour").val(),
+                                hrs_debut: $("#hrs_debut").val(),
+                                hrs_fin: $("#hrs_fin").val(),
                                 ref_prof: $("#ref_prof").val(),
                                 ref_classe: $("#ref_classe").val(),
-                                ref_salle_classe: $("#ref_salle_classe").val()
+                                ref_salle: $("#ref_salle").val()
 
                             },
                             function result(data, status) {

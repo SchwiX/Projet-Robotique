@@ -14,10 +14,10 @@
 class Cours EXTENDS Projet{
 
     private $id_cou;
-    private $nom_cou;
-    private $mat_cou;
-    private $heure_debut;
-    private $heure_fin;
+    private $nom_cour;
+    private $mat_cour;
+    private $hrs_debut;
+    private $hrs_fin;
     private $ref_prof;
     private $ref_classe;
     private $ref_salle;
@@ -42,13 +42,13 @@ class Cours EXTENDS Projet{
             $stmt->execute($args);
             $tab = $stmt->fetch();
 
-            $this->set_nom_cou($tab['nom_cou']);
-            $this->set_mat($tab['mat']);
-            $this->set_heure_debut($tab['heure_debut']);
-            $this->set_heure_fin($tab['heure_fin']);
+            $this->set_nom_cou($tab['nom_cour']);
+            $this->set_mat($tab['mat_cour']);
+            $this->set_heure_debut($tab['hrs_debut']);
+            $this->set_heure_fin($tab['hrs_fin']);
             $this->set_ref_prof($tab['ref_prof']);
             $this->set_ref_classe($tab['ref_classe']);
-            $this->set_ref_salle_classe($tab['ref_salle_classe']);
+            $this->set_ref_salle_classe($tab['ref_salle']);
         } catch (Exception $e) {
             return false;
         }
@@ -79,20 +79,20 @@ class Cours EXTENDS Projet{
     //Ajout d'un cours dans la base
     public function add($tab) {
         //$tab d'arguments
-        $args['nom_cou'] = $tab['nom_cou'];
-        $args['mat_cou'] = $tab['mat_cou'];
-        $args['heure_debut'] = $tab['heure_debut'];
-        $args['heure_fin'] = $tab['heure_fin'];
+        $args['nom_cour'] = $tab['nom_cour'];
+        $args['mat_cour'] = $tab['mat_cour'];
+        $args['hrs_debut'] = $tab['hrs_debut'];
+        $args['hrs_fin'] = $tab['hrs_fin'];
         $args['ref_prof'] = $tab['ref_prof'];
         $args['ref_classe'] = $tab['ref_classe'];
         $args['ref_salle'] = $tab['ref_salle'];
 
         //requête
         $query = "INSERT INTO cours SET "
-                . "nom_cou = :nom_cou, "
-                . "mat_cou = :mat_cou, "
-                . "heure_debut = :heure_debut, "
-                . "heure_fin = :heure_fin, "
+                . "nom_cour = :nom_cour, "
+                . "mat_cour = :mat_cour, "
+                . "hrs_debut = :hrs_debut, "
+                . "hrs_fin = :hrs_fin, "
                 . "ref_prof = :ref_prof, "
                 . "ref_classe = :ref_classe, "
                 . "ref_salle = :ref_salle";
@@ -107,15 +107,15 @@ class Cours EXTENDS Projet{
     }
     
     
-    public function check($nom_cou) {
-        $query = "SELECT nom_cou FROM cours WHERE nom_cou=:nom_cou LIMIT 1";
+    public function check($nom_cour) {
+        $query = "SELECT nom_cour FROM cours WHERE nom_cour=:nom_cour LIMIT 1";
 
         try {
             $stmt = $this->pdo->prepare($query);
-            $stmt->execute(array(":nom_cou" => strtolower($nom_cou)));
+            $stmt->execute(array(":nom_cour" => strtolower($nom_cour)));
             $tab = $stmt->fetch();
 
-            if ($tab["nom_cou"] == strtolower($nom_cou)) {
+            if ($tab["nom_cour"] == strtolower($nom_cour)) {
                 return true;
             } else {
                 return false;
@@ -126,16 +126,16 @@ class Cours EXTENDS Projet{
     }
     
 
-public function check_no_doublon($nom_cou) {
+public function check_no_doublon($nom_cour) {
 
-        $query = "SELECT * FROM cours WHERE nom_cou = :nom_cou LIMIT 1"; //probablement une faute ici
+        $query = "SELECT * FROM cours WHERE nom_cour = :nom_cour LIMIT 1";
         try {
             $stmt = $this->pdo->prepare($query);
-            $args[':nom_cou'] = $nom_cou;
+            $args[':nom_cour'] = $nom_cour;
 
             $stmt->execute($args);
             $tab = $stmt->fetch();
-            if ($tab["nom_cou"] == strtolower($nom_cou)) {
+            if ($tab["nom_cour"] == strtolower($nom_cour)) {
                 return false;
             } else {
                 return true;
@@ -150,20 +150,20 @@ function set_id_cou($id_cou) {
         $this->id_cou = $id_cou;
     }
     
-    function set_nom_cou($nom_cou){
-        $this->nom_cou = $nom_cou;
+    function set_nom_cou($nom_cour){
+        $this->nom_cour = $nom_cour;
     }
     
-    function set_mat($mat){
-        $this->mat = $mat;
+    function set_mat($mat_cour){
+        $this->mat_cour = $mat_cour;
     }
     
-    function set_heure_debut($heure_debut){
-        $this->heure_debut = $heure_debut;
+    function set_heure_debut($hrs_debut){
+        $this->hrs_debut = $hrs_debut;
     }
     
-    function set_heure_fin($heure_fin){
-        $this->heure_fin = $heure_fin;
+    function set_heure_fin($hrs_fin){
+        $this->hrs_fin = $hrs_fin;
     }
     
     function set_ref_prof($ref_prof){
@@ -174,8 +174,8 @@ function set_id_cou($id_cou) {
         $this->ref_classe = $ref_classe;
     }
     
-    function set_ref_salle_classe($ref_salle_classe){
-        $this->ref_salle_classe = $ref_salle_classe;
+    function set_ref_salle_classe($ref_salle){
+        $this->ref_salle = $ref_salle;
     }
     
 function get_id_cou(){

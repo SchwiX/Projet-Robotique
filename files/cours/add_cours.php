@@ -43,30 +43,30 @@
                 <form id="add_cours_form">
                     <div>
                         <div class="form-group row">
-                            <label for="nom_cou" class="col-sm-2 col-form-label">Nom du cours</label>
+                            <label for="nom_cour" class="col-sm-2 col-form-label">Nom du cours</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nom_cou" name="nom_cou" placeholder="Nom du cours">
+                                <input type="text" class="form-control" id="nom_cour" name="nom_cour" placeholder="Nom du cours">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="mat" class="col-sm-2 col-form-label">Matière</label>
+                            <label for="mat_cour" class="col-sm-2 col-form-label">Matière</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="mat" name="mat_cou" placeholder="Matière enseignée">
+                                <input type="text" class="form-control" id="mat_cour" name="mat_cour" placeholder="Matière enseignée">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="heure_debut" class="col-sm-2 col-form-label">Heure de début</label>
+                            <label for="hrs_debut" class="col-sm-2 col-form-label">Heure de début</label>
                             <div class="col-sm-10">
-                                <input type="time" class="form-control" id="heure_debut" name="heure_debut" placeholder="Début">
+                                <input type="time" class="form-control" id="hrs_debut" name="hrs_debut" placeholder="Début">
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="heure_fin" class="col-sm-2 col-form-label">Heure de fin</label>
+                            <label for="hrs_fin" class="col-sm-2 col-form-label">Heure de fin</label>
                             <div class="col-sm-10">
-                                <input type="time" class="form-control" id="heure_fin" name="heure_fin" placeholder="Début">
+                                <input type="time" class="form-control" id="hrs_fin" name="hrs_fin" placeholder="Début">
                             </div>
                         </div>
 
@@ -76,7 +76,7 @@
                             <div class="col-sm-10">
                                 <select class="form-control" id="ref_prof" name="ref_prof">
                                     <?php
-                                    
+                                    /*
                                     $query_prof = "SELECT id_prof, nom_prof, prenom_prof FROM prof";
                                     $stmt = $pdo->prepare($query_prof);
                                     $stmt->execute();
@@ -85,7 +85,8 @@
                                     foreach($tab_prof AS $prof){
                                     echo "<option name=\"" . $prof['id_prof'] . "\" id=\"" . $prof['id_prof'] . "\">" . $prof['nom_prof'] . " " . $prof['prenom_prof'] . "</option>";
                                     }
-                                    ?>
+                                    */?>
+                                    <option value="1">test</option>
                                 </select>
                             </div>
                         </div>
@@ -96,33 +97,35 @@
                                 <select class="form-control" id="ref_classe" name="ref_classe">
                                 <?php
                                     
-                                    $query_classe = "SELECT id_classe, nom_classe FROM classe";
+                                    $query_classe = "SELECT id_cla, nom_cla FROM classe";
                                     $stmt = $pdo->prepare($query_classe);
                                     $stmt->execute();
                                     $tab_classe = $stmt->fetchALL();
                                     
                                     foreach($tab_classe AS $classe){
-                                    echo "<option name=\"" . $classe['id_classe'] . "\" id=\"" . $classe['id_classe'] . "\">" . $classe['nom_classe'] . "</option>";
+                                    echo "<option name=\"" . $classe['id_cla'] . "\" id=\"" . $classe['id_cla'] . "\">" . $classe['nom_cla'] . "</option>";
                                     }
                                     ?>
+                                    <!--<option value="3">test</option>-->
                                 </select>
                             </div>
                         </div>
                         
                         <div class="form-group row">
-                            <label for="ref_classe" class="col-sm-2 col-form-label">Salle de classe</label>
+                            <label for="ref_salle" class="col-sm-2 col-form-label">Salle de classe</label>
                             <div class="col-sm-10">
-                                <select class="form-control" id="ref_salle_classe" name="ref_salle">
+                                <select class="form-control" id="ref_salle" name="ref_salle">
                                 <?php
                                     
-                                    $query_salle_classe = "SELECT id_salle_classe, nom_salle_classe FROM salle_classe";
+                                    $query_salle_classe = "SELECT id_salle, nom_salle, lieu_salle FROM salle";
                                     $stmt = $pdo->prepare($query_salle_classe);
                                     $stmt->execute();
                                     $tab_salle_classe = $stmt->fetchALL();
                                     
-                                    foreach($tab_salle_classe AS $salle_classe){
-                                    echo "<option name=\"" . $salle_classe['id_salle_classe'] . "\" id=\"" . $salle_classe['id_salle_classe'] . "\">" . $salle_classe['nom_salle_classe'] . "</option>";
+                                    foreach($tab_salle_classe AS $salle){
+                                    echo "<option name=\"" . $salle['id_salle'] . "\" id=\"" . $salle['id_salle'] . "\">" . $salle['nom_salle'] . ", " . $salle['lieu_salle'] . "</option>";
                                     }
+                                    
                                     ?>
                                 </select>
                             </div>
