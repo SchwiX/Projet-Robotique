@@ -122,6 +122,21 @@ class Cours EXTENDS Projet {
         }
     }
 
+    public function get_cour($order){
+        $query = "SELECT * FROM cours order BY :order";
+        
+        $args[':order'] = $order;
+        
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute($args);
+            $tab = $stmt->fetchAll();
+            return($tab);
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+    
     public function get_profs(){
         $query = "SELECT Prof.id_prof, Per.nom_per, Per.prenom_per "
                 . "FROM `ref_prof` AS Prof "
