@@ -34,7 +34,7 @@
                     </form>
                     <div class="form-group row">
                         <table>
-                            <form id="suppModif" method="post" action="<?php echo URL; ?>cours/suppModif.php">
+                            <form id="suppModif" method="post" action="<?php echo URL; ?>cours/modif_cours.php">
                                 <?php
                                 if ($_POST) {
                                     $arr_cours = $Cour->get_cour($_POST['order']);
@@ -47,8 +47,9 @@
                                         echo "<td>" . $cou['hrs_fin'] . "</td>";
                                         echo "<td>" . $cou['ref_prof'] . "</td>";
                                         echo "<td>" . $cou['ref_salle'] . "</td>";
+                                        echo '<input type="hidden" name="id" value="' . $cou['id_cou'] . '">';
                                         echo "<td>" . "<input type=\"submit\" value=\"Modifier\" name=\"modif\">";
-                                        echo "<td>" . "<input type=\"submit\" value=\"Supprimer\"" . "href=\"suppModif.php?id=\"" . $cou['id_cou'] . "\">" . "</td>";
+                                        //echo "<td>" . "<input type=\"submit\" value=\"Supprimer\"" . "href=\"suppModif.php\">" . "</td>";
                                         echo "</tr>";
                                     }
                                 }

@@ -122,6 +122,36 @@ class Cours EXTENDS Projet {
         }
     }
 
+    public function get_cour_from_id($id){
+        $query = "SELECT * FROM `cours` WHERE id_cou= :id LIMIT 1";
+        
+        $args[':id'] = $id;
+        
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute($args);
+            $tab = $stmt->fetchAll();
+            
+            $cou = array();
+            foreach ($tab as $c) {
+                $cou['id_cou'] = $c['id_cou'];
+                $cou['nom_cour'] = $c['nom_cour'];
+                $cou['mat_cour'] = $c['mat_cour'];
+                $cou['hrs_debut'] = $c['hrs_debut'];
+                $cou['hrs_fin'] = $c['hrs_fin'];
+                $cou['ref_prof'] = $c['ref_prof'];
+                $cou['ref_classe'] = $c['ref_classe'];
+                $cou['ref_salle'] = $c['ref_salle'];
+            }
+            
+            return($cou);
+        } catch (Exception $e) {
+            return false;
+        }
+        
+        
+    }
+
     public function get_cour($order){
         $query = "SELECT * FROM cours order BY :order";
         
@@ -177,7 +207,7 @@ class Cours EXTENDS Projet {
             return false;
         }
     }
-
+    
     public function __toString() {
         $str = "\n<pre>\n";
         foreach ($this AS $key => $val) {

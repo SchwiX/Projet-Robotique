@@ -6,8 +6,7 @@ require "./../../config/config.inc.php";
 require_once WAY . '/includes/autoload.inc.php';
 
 $cou = new Cours();
-/*$cou->add($_POST);
-$cou->set_id_cou($id_cou);*/
+
 if ($cou->check($_POST['nom_cour'])) {
     $tab['reponse'] = false;
     $tab['message']['texte'] = "Ce nom de cours est déjà utilisé !";
