@@ -85,6 +85,38 @@ class Cours EXTENDS Projet {
         return $this->pdo->lastInsertId();
     }
 
+    function modif($id, $tab) {
+        $query = "UPDATE `cours` SET "
+                . "nom_cour = :nom_cour, "
+                . "mat_cour = :mat_cour, "
+                . "hrs_debut = :hrs_debut, "
+                . "hrs_fin = :hrs_fin, "
+                . "ref_prof = :ref_prof, "
+                . "ref_classe = :ref_classe, "
+                . "ref_salle = :ref_salle "
+                . "WHERE `cours`.`id_cou` = :id";
+        
+        $args[':id'] = $id;
+
+        $args[':nom_cour'] = $tab['nom_cour'];
+        $args[':mat_cour'] = $tab['mat_cour'];
+        $args[':hrs_debut'] = $tab['hrs_debut'];
+        $args[':hrs_fin'] = $tab['hrs_fin'];
+        $args[':ref_prof'] = $tab['ref_prof'];
+        $args[':ref_classe'] = $tab['ref_classe'];
+        $args[':ref_salle'] = $tab['ref_salle'];
+
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute($args);
+        } catch (Exception $e) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+    
     public function check($nom_cour) {
         $query = "SELECT nom_cour FROM cours WHERE nom_cour=:nom_cour LIMIT 1";
 
