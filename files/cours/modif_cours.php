@@ -98,12 +98,15 @@
                                     </select>
                                 </div>
                             </div>
+                            
+                            <input type="hidden" id="id_cou" value="<?php echo $cour_ac['id_cou'] ?>">
+                            
                         </div>
 
                         <!-- Bouton submit et reset -->
                         <div class="form-group row">
                             <div class="col-sm-offset-8 col-sm-2">
-                                <input type="submit" class="form-control btn btn-primary submit" id="submit_conf" value="Ajouter">
+                                <input type="submit" class="form-control btn btn-primary submit" id="submit_conf" value="Modifier">
                             </div>
                             <div class="col-sm-2">
                                 <input type="reset" class="form-control btn btn-warning" id="reset_conf" value="Annuler">

@@ -35,6 +35,7 @@ $(function() {
                     $.post(
                             "./json/modif_cours.json.php?_=" + Date.now(),
                             {
+                                id_cou : $("#id_cou").val(),
                                 nom_cour: $("#nom_cour").val(),
                                 mat_cour: $("#mat_cour").val(),
                                 hrs_debut: $("#hrs_debut").val(),

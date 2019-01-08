@@ -7,18 +7,17 @@ require_once WAY . '/includes/autoload.inc.php';
 
 $cou = new Cours();
 
-if ($cou->check($_POST['nom_cour'])) {
-    $tab['reponse'] = false;
-    $tab['message']['texte'] = "Ce nom de cours est déjà utilisé !";
-    $tab['message']['type'] = "danger";
-} else {
-    $id_cou = $cou->add($_POST);
-    $cou->set_id_cou($id_cou);
-    if ($cou->init()) {
+if (isset($_POST)) {
+    $modif_cour = $cou->modif($_POST['id_cou'], $_POST);
+    
+    if($modif_cour){
         $tab['reponse'] = true;
         $tab['message']['texte'] = "Le cours a été ajouté avec succès !";
         $tab['message']['type'] = "success";
-        
+    }else{
+        $tab['reponse'] = false;
+        $tab['message']['texte'] = "Ce nom de cours est déjà utilisé !";
+        $tab['message']['type'] = "danger";
     }
 }
 
