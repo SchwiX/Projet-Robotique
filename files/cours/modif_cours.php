@@ -5,7 +5,7 @@
     
     $Cour = new Cours();
     
-    $cour_ac = $Cour->get_cour_from_id($_POST['id']);
+    $cour_ac = $Cour->get_cour_from_id($_POST['id_cou']);
     
     $select = ' selected="selected" ';
     ?>  

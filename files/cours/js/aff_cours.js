@@ -1,23 +1,21 @@
 $(function() {
-    $("#aff_cours_form").validate(
+    $("#del_form").validate(
             {
                 rules: {
-                    order: {
-                        required: true
+                    id_cou: {
+                        required: false
                     }
                 },
                 messages: {
-                    order: {
-                        required: "Veuillez choisir un filtre"
-                    }
+                    
                 },
                 
                 submitHandler: function (form) {
 
                     $.post(
-                            "./../affichage_cours.php",
+                            "./json/aff_cours.json.php?_=" + Date.now(),
                             {
-                                order: $("#order").val()
+                                id_cou: $("#id_cou").val()
                             },
                             function result(data, status) {
                                 //Ajoute le message
@@ -34,12 +32,7 @@ $(function() {
                                 $("#alert").css("display", "block");
                             }
                     );
-
                 }
             }
-
-
     )
-
-
 });

@@ -74,7 +74,7 @@ class Cours EXTENDS Projet {
         return $this->pdo->lastInsertId();
     }
 
-    function modif($id, $tab) {
+    public function modif($id, $tab) {
         $query = "UPDATE `cours` SET "
                 . "nom_cour = :nom_cour, "
                 . "mat_cour = :mat_cour, "
@@ -104,7 +104,19 @@ class Cours EXTENDS Projet {
         return true;
     }
     
-    
+    public function del($id){
+        $query = "DELETE FROM `cours` WHERE `cours`.`id_cou` = :id";
+        
+        $args[':id'] = $id;
+        
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute($args);
+        } catch (Exception $e) {
+            return false;
+        }
+        return true;
+    }
     
     public function check($nom_cour) {
         $query = "SELECT nom_cour FROM cours WHERE nom_cour=:nom_cour LIMIT 1";

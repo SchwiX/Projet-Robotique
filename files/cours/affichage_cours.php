@@ -34,7 +34,7 @@
                     </form>
                     <div class="form-group row">
                         <table>
-                            <form id="suppModif" method="post" action="<?php echo URL; ?>cours/modif_cours.php">
+                            
                                 <?php
                                 if ($_POST) {
                                     $arr_cours = $Cour->get_cour($_POST['order']);
@@ -48,17 +48,33 @@
                                         echo "<td>" . $cou['ref_prof'] . "</td>";
                                         echo "<td>" . $cou['ref_salle'] . "</td>";
                                         echo '<input type="hidden" name="id" value="' . $cou['id_cou'] . '">';
-                                        echo "<td>" . "<input type=\"submit\" value=\"Modifier\" name=\"modif\">";
-                                        //echo "<td>" . "<input type=\"submit\" value=\"Supprimer\"" . "href=\"suppModif.php\">" . "</td>";
+                                        
+                                        //Modification
+                                        echo "<td>";
+                                        echo '<form id="modif_form" method="post" action="'. URL .'cours/modif_cours.php">';
+                                        echo '<input type="hidden" id="id_cou" name="id_cou" value="' . $cou['id_cou'] . '">';
+                                        echo "<input type=\"submit\" value=\"Modifier\">";
+                                        echo "</form>";
+                                        echo "</td>";
+                                        
+                                        //Suppression
+                                        echo "<td>";
+                                        echo '<form id="del_form">';
+                                        echo '<input type="hidden" id="id_cou" name="id_cou" value="' . $cou['id_cou'] . '">';
+                                        echo '<input type="submit" id="submit_conf" value="Supprimer">';
+                                        echo "</form>";
+                                        echo "</td>";
+                                        
                                         echo "</tr>";
                                     }
                                 }
                                 ?>                             
-                            </form>    
+                            </form>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    <script src="./js/aff_cours.js"></script>
 </html>
