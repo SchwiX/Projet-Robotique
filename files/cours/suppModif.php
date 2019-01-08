@@ -18,7 +18,7 @@
             $stmt = $pdo->prepare($query_modif);
             $stmt->execute();
             $tab_modif = $stmt->fetchALL();
-            echo "<form id=\"modif\" method=\"post\" action=\"suppModiff\">";
+            echo "<form id=\"modif\" method=\"post\" action=\"suppModif\">";
             foreach ($tab_modif AS $modif) {
                 echo "<div class=\"form-group row\">";
                 echo "<label for=\"modif_nom_cour\" class=\"col-sm-2 col-form-label\">" . $modif['nom_cou'] . "</label>";

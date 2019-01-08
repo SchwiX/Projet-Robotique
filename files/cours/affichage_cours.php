@@ -49,11 +49,12 @@
                             Veuillez choisir l'option :
                             <select id="order" name="order">
                                 <optgroup label="Ordrer par">
-                                <option value="nom_cou" selected>Nom du cours</option>
-                                <option value="mat">Matière du cours</option>
-                                <option value="heure_debut">Heure du début du cours</option>
+                                <option value="nom_cour" selected>Nom du cours</option>
+                                <option value="mat_cour">Matière du cours</option>
+                                <option value="hrs_debut">Heure du début du cours</option>
+                                    <option value="hrs_fin">Heure de fin du cours</option>
                                 <option value="ref_prof">Enseignant du cours</option>
-                                <option value="ref_salle_classe">Classe du cours</option>
+                                <option value="ref_salle">Classe du cours</option>
                                 </optgroup>
                             </select>
                         </div>
@@ -78,12 +79,13 @@
                             $stmt = $pdo->prepare($affichage);
                             $stmt->execute();
                             $tab_affichage = $stmt->fetchALL();
-                            echo "<tr><th>Nom du cours</th><th>Matière enseignée</th><th>Heure du début de la leçon</th><th>Professeur</th><th>Salle de classe</th></tr>";
+                            echo "<tr><th>Nom du cours</th><th>Matière enseignée</th><th>Heure du début de la leçon</th><th>heure de la fin du cours</th><th>Professeur</th><th>Salle de classe</th></tr>";
                             foreach($tab_affichage AS $affichage){
                                 echo "<tr>";
                                 echo "<td>" . $affichage['nom_cour'] . "</td>";
                                 echo "<td>" . $affichage['mat_cour'] . "</td>";
                                 echo "<td>" . $affichage['hrs_debut'] . "</td>";
+                                echo "<td>" . $affichage['hrs_fin'] . "</td>";
                                 echo "<td>" . $affichage['ref_prof'] . "</td>";
                                 echo "<td>" . $affichage['ref_salle'] . "</td>";
                                 echo "</tr>";
