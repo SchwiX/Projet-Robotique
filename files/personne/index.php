@@ -1,48 +1,13 @@
-<?php
-
-require("./../config/config.inc.php");
-
-require_once(WAY . "/includes/autoload.inc.php");
-
-?>
-
-<!doctype html>
-<html lang="fr">
-    <head>
-        <!--meta http-equiv="Content-Security-Policy" content="default-src 'self' ;style-src https://* 'unsafe-inline'; img-src https://* ;  child-src 'none'; "--> 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Roberta</title>
-
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-        
-        <!--- JQuery validate -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-        
-    </head>
-
-    <body>
-        <?php
-        
-        $per = new Personne();
-        $personnes = $per->get_all();
-        
-//        echo '<pre>';
-//        print_r($personnes);
-//        echo '</pre>';
-        
-        ?>
-        <div class="container">
+    <?php
+    session_start();
+    $aut = "USR_USR";
+    require("./../config/config.inc.php");
+    require(WAY . "./includes/secure.inc.php");
+    require_once(WAY . '/includes/autoload.inc.php');
+    require_once(WAY . '/includes/head.inc.php');
+    $per = new Personne();
+    $personnes = $per->get_all();
+    ?>
             <div class="">
                 <div class="h3">
                     AFFICHAGE DES PERSONNES
@@ -79,3 +44,4 @@ require_once(WAY . "/includes/autoload.inc.php");
 
     </body>
     <script src="./js/add_personne.js"></script>
+</html>
