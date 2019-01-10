@@ -1,6 +1,5 @@
 <?php 
 require_once(WAY."/includes/autoload.inc.php");
-
 /*
 Procédure de connexion de la personne :
 1)login.php --> appel le js qui donne au json le mot de passe et l'email
@@ -20,20 +19,23 @@ Procédure de connexion de la personne :
 if(isset($_SESSION['id'])){
   $per =  new Personne($_SESSION['id']);
 
-    if(!$per->check_connect()){
-       session_destroy();
+    if(!$per->check_connect($_SESSION['id'])){
+       //session_destroy();
        header('Location: '.URL.'login.php');
+       $_SESSION['ptn'] = 1;
        exit;
     }
 }else{
-     session_destroy();
+     //session_destroy();
      header('Location: '.URL.'login.php');
+     $_SESSION['ptn'] = 2;
      exit;
 }
 
 if(!$per->check_aut($aut)){
    //session_destroy();
    header('Location: '.URL.'index.php');
+   $_SESSION['ptn'] = 3;
    exit;
 }
 

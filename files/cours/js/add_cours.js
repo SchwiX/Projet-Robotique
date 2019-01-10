@@ -53,18 +53,19 @@ $(function() {
                                     $("#add_cours_form").trigger("reset");
                                 }
                                 
+                                if (data.reponse === true) {
+                                    message("Ajouté", "success");
+                                }else{
+                                    message("Erreur", "danger")
+                                }
+                                
                                 //Ajoute le message
                                 $("#alert .message").html(data.message.texte);
                                 $("#alert").addClass("alert-"+data.message.type);
                                 $("#alert").css("display", "block");
                             }
                     );
-
                 }
             }
-
-
     )
-
-
 });

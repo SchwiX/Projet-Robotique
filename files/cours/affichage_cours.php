@@ -1,7 +1,10 @@
-<?php
-    require "./../config/config.inc.php";
-    require_once WAY . '/includes/autoload.inc.php';
-    require_once WAY . '/includes/head.inc.php';
+    <?php
+    session_start();
+    $aut = "USR_USR";
+    require("./../config/config.inc.php");
+    require(WAY . "./includes/secure.inc.php");
+    require_once(WAY . '/includes/autoload.inc.php');
+    require_once(WAY . '/includes/head.inc.php');
 
     $Cour = new Cours();
     ?>

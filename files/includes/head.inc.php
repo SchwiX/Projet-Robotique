@@ -21,8 +21,15 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-        <!--- JQuery validate -->
+        <!-- JQuery validate -->
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+        <link rel="stylesheet" href="<?php echo URL; ?>/css/global.css">
+        
+        <!-- Ressources personnelles -->
+        <link href="./css/css.css" rel="stylesheet">
+        <script src="<?php echo URL; ?>js/functions.js"></script>
+        <!-- css utilisée dans tout le site -->
+        
         <link href="./head_css.css" rel="stylesheet">
 
     </head>
@@ -36,8 +43,8 @@
                         <div class="navbar-header">
                             <a class="navbar-brand" href="<?php echo URL; ?>"><i class="fas fa-robot"></i> ProjetRobotique</a>
                         </div>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav">
+                        <div class="" id="navbarsExample03"><!-- TODO : A FIXER LES CLASSES -->
+                            <ul class="navbar-nav mr-auto">
 
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Droits d'accès<span class="caret"></span></a>
@@ -48,19 +55,20 @@
                                         <li><a href="<?php echo URL; ?>cours/suppModif.php">Supprimer les cours</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestion<span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="<?php echo URL; ?>modules/index.php">Modules ICT</a></li>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Personnes<span class="caret"></span></a>
+                                    <ul class="dropdown-menu show">
+                                        <li><a class="dropdown-item" href="<?php echo URL; ?>personne/show_personne.php">Liste & modification des personnes</a></li>
+                                        <li><a class="dropdown-item" href="<?php echo URL; ?>personne/add_personne.php">Ajouter une personne</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Examens<span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="<?php echo URL; ?>Convocations/index.php">Convocations</a></li>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cours<span class="caret"></span></a>
+                                    <ul class="dropdown-menu show">
+                                        <li><a class="dropdown-item" href="<?php echo URL; ?>cours/affichage_cours.php">Liste & modification des cours</a></li>
+                                        <li><a class="dropdown-item" href="<?php echo URL; ?>cours/add_cours.php">Ajouter un cour</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="<?php echo URL; ?>chat/index.php">Chat</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="<?php echo URL; ?>logout.php">Déconnection</a></li>

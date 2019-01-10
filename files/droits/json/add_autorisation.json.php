@@ -1,23 +1,23 @@
 <?php
 
+$aut = "USR_USR";
 header('Content-Type: application/json');
 session_start();
 require("./../../config/config.inc.php");
 require_once(WAY . "/includes/autoload.inc.php");
+require(WAY . "./includes/secure.inc.php");
+
+$aut = new Autorisation();
 
 
-$per = new Personne();
+if ($aut->check_no_doublon($_POST['code_aut'])) {
+    $id = $aut->add_usr_and_adm_auto($_POST);
 
-print_r($_POST);
+    $aut->set_id_aut($id['ADM']);
 
-if ($per->check_no_doublon($_POST['nom_per'])) {
-
-    $id = $per->add($_POST);
-    $per->set_id_per($id);
-
-    if ($per->init()) {
+    if ($aut->init()) {
         $tab['reponse'] = true;
-        $tab['message']['texte'] = "Ajouté";
+        $tab['message']['texte'] = "Les autorisations ADM_" . $_POST['code_aut'] . " et USR_" . $_POST['code_aut'] . " ont bien été ajoutée";
         $tab['message']['type'] = "success";
     } else {
         $tab['reponse'] = false;
@@ -26,10 +26,9 @@ if ($per->check_no_doublon($_POST['nom_per'])) {
     }
 } else {
     $tab['reponse'] = false;
-    $tab['message']['texte'] = "Existe déjà.";
+    $tab['message']['texte'] = "Cette autorisation existe déjà dans la base";
     $tab['message']['type'] = "danger";
 }
-
-
+//print_r($_POST);
 echo json_encode($tab);
 ?>
