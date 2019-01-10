@@ -1,33 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html,body{
+    background-color: #23292e;
+}
+
 .header{
-    background-color: #ff3545
+    background-color: #334d5c
+}
+
+.body{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #d5d5d5;
+}
+
+.titre-texte{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
 
 .text{
     text-align: justify
 }
 
-.div{
-    background-color: #dc3545
-}
-
 .robot{
-    color: #007bff;
+    color: #55ad7a;
     font-size: 50px
 }
 
 .titre{
+    color: whitesmoke;
     font-size: 50px
+}
+
+p {
+font-family: 'Roboto', sans-serif;
 }
 
 .btn-head{
     font-size: 17px;
-    background-color: #007bff;
-    border-color: #007bff;
-    opacity: 1
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
 }
 
 .btn-head:hover{
     font-size: 17px;
-    background-color: #007bff;
-    border-color: #007bff
+    background-color: #55ad7a;
+    border-color: #55ad7a
 }
