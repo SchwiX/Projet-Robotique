@@ -32,8 +32,7 @@
                 </div>
                 <div class="col col-md-4 align-self-center text-right">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                      <a href="#" class="btn btn-primary btn-head">s'enregistrer</a>
-                      <a href="../cours/add_cours.php" class="btn btn-primary btn-head">se connecter</a>
+                      <a href="../login.php" class="btn btn-primary btn-head">se connecter</a>
                     </div>
                 </div>
             </div>
