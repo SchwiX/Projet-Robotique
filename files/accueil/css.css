@@ -1,7 +1,33 @@
 .header{
-    background-color: hotpink
+    background-color: #ff3545
 }
 
 .text{
     text-align: justify
+}
+
+.div{
+    background-color: #dc3545
+}
+
+.robot{
+    color: #007bff;
+    font-size: 50px
+}
+
+.titre{
+    font-size: 50px
+}
+
+.btn-head{
+    font-size: 17px;
+    background-color: #007bff;
+    border-color: #007bff;
+    opacity: 1
+}
+
+.btn-head:hover{
+    font-size: 17px;
+    background-color: #007bff;
+    border-color: #007bff
 }

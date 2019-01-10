@@ -5,6 +5,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>Roberta</title>
+        
+        <!-- Font pour les images -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -20,18 +23,18 @@
 
         <!--- JQuery validate -->
         <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-        <link href="./css/css.css" rel="stylesheet">
+        <link href="./head_css.css" rel="stylesheet">
 
     </head>
     <body>
         <div class="container">
             <?php
-            if (isset($_SESSION['id'])) {
+            /*if (isset($_SESSION['id'])) {
                 ?>
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="<?php echo URL; ?>">Game Center</a>
+                            <a class="navbar-brand" href="<?php echo URL; ?>"><i class="fas fa-robot"></i> ProjetRobotique</a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
@@ -39,10 +42,10 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Droits d'accès<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="<?php echo URL; ?>droits/attribution_fnc_per.php">Attribution fonctions</a></li>
-                                        <li><a href="<?php echo URL; ?>droits/attribution_aut_fnc.php">Attribution autorisations</a></li>
-                                        <li><a href="<?php echo URL; ?>droits/fonctions.php">Fonctions</a></li>
-                                        <li><a href="<?php echo URL; ?>droits/autorisations.php">Autorisations</a></li>
+                                        <li><a href="<?php echo URL; ?>cours/add_cours.php">Ajouter des cours</a></li>
+                                        <li><a href="<?php echo URL; ?>cours/affichage_courrs.php">Affichage des cours</a></li>
+                                        <li><a href="<?php echo URL; ?>cours/modif_cours.php">modifier les cours</a></li>
+                                        <li><a href="<?php echo URL; ?>cours/suppModif.php">Supprimer les cours</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -64,6 +67,30 @@
                             </ul>
                         </div>
                     </div>                    
+                </nav>
+                <?php
+            }*/
+            ?>
+            <?php
+            if (true) {
+                ?>
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="<?php echo URL; ?>accueil/index.php"><i class="fas fa-robot"></i> ProjetRobotique</a>
+                        </div>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Gestionnaire
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="../cours/affichage_cours.php">Cours</a>
+                            <a class="dropdown-item" href="../cours/modif_cours.php">Modifier des cours</a>
+                            <a class="dropdown-item" href="../cours/add_cours.php">ajouter des cours</a>
+                            <a class="dropdown-item" href="../cours/suppModif.php">supprimer des cours</a>
+                          </div>
+                        </div>
+                    </div>
                 </nav>
                 <?php
             }
