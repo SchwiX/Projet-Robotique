@@ -26,4 +26,5 @@ define("BASE_NAME","roberta_18");
 define("SQL_USER","root");
 
 // Mot de passe
-define("SQL_PASSWORD","");?>
+define("SQL_PASSWORD","");
+?>

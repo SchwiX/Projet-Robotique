@@ -13,11 +13,13 @@ require("./config/config.inc.php");
 require_once(WAY . "./includes/secure.inc.php");
 require_once(WAY . "/includes/head.inc.php");
 ?>
-<div class="row">
+<div class="container">
     <div class="header">
-        <h3>Bienvenue</h3>
+        <h3>Bienvenue <?php echo $_SESSION['name'] ?></h3>
+        <div>
+            Bonjour ici vous pouvez gérer les personnes et les cours
+        </div>
     </div>
-</div>
 </div>
 </body>
 </html>

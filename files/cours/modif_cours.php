@@ -12,7 +12,7 @@
     
     $select = ' selected="selected" ';
     ?>  
-            <div class="">
+            <div class="container">
                 <div class="h3">
                     Modifier un cours
                 </div>
@@ -108,11 +108,14 @@
 
                         <!-- Bouton submit et reset -->
                         <div class="form-group row">
-                            <div class="col-sm-offset-8 col-sm-2">
+                            <div class="col-sm-offset-6 col-sm-2">
                                 <input type="submit" class="form-control btn btn-primary submit" id="submit_conf" value="Modifier">
                             </div>
                             <div class="col-sm-2">
-                                <input type="reset" class="form-control btn btn-warning" id="reset_conf" value="Annuler">
+                                <input type="reset" class="form-control btn btn-primary" id="reset_conf" value="recommencer">
+                            </div>
+                            <div class="col-sm-2">
+                                <a class="form-control btn btn-danger" href="affichage_cours.php">Quitter</a>
                             </div>
                         </div>
                     </form>
