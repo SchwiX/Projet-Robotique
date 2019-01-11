@@ -41,7 +41,6 @@
     <div class="container body">
         <h2 class="titre-texte">Bonjour et bienvenue sur notre site</h2>
         <div class="text">
-            <p>Bienvenue sur le site de gestion des cours de Robortique</p>
         </div>
     </div>
 </body>
