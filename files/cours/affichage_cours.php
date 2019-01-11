@@ -55,13 +55,15 @@
                 <?php
                     $arr_cours = $Cour->get_cour($_POST['order']);
                     foreach ($arr_cours AS $cou) {
+                        $name_prof = $Cour->get_prof_name($cou['ref_prof']);
+                        $salle_name = $Cour->get_salle_name($cou['ref_salle']);
                         echo "<tr>";
                         echo "<td>" . $cou['nom_cour'] . "</td>";
                         echo "<td>" . $cou['mat_cour'] . "</td>";
                         echo "<td>" . $cou['hrs_debut'] . "</td>";
                         echo "<td>" . $cou['hrs_fin'] . "</td>";
-                        echo "<td>" . $cou['ref_prof'] . "</td>";
-                        echo "<td>" . $cou['ref_salle'] . "</td>";
+                        echo "<td>" . $name_prof[0]['nom_per'] . "</td>";
+                        echo "<td>" . $salle_name[0]['nom_salle'] . "</td>";
                         echo '<input type="hidden" name="id" value="' . $cou['id_cou'] . '">';
 
                         //Modification

@@ -214,6 +214,25 @@ class Cours EXTENDS Projet {
             return false;
         }
     }
+    
+    public function get_prof_name($id){
+        $query = "SELECT Per.nom_per "
+                . "FROM `ref_prof` AS Prof "
+                . "JOIN personnes AS Per ON Prof.ref_per = Per.id_per "
+                . "WHERE Prof.id_prof = :id LIMIT 1";
+        
+        $args[':id'] = $id;
+        
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute($args);
+            $tab = $stmt->fetchAll();
+            return($tab);
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+    
 
     public function get_classes(){
         $query = "SELECT * FROM `classe`";
@@ -234,6 +253,21 @@ class Cours EXTENDS Projet {
         try {
             $stmt = $this->pdo->prepare($query);
             $stmt->execute();
+            $tab = $stmt->fetchAll();
+            return($tab);
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+    
+    public function get_salle_name($id){
+        $query = "SELECT nom_salle FROM `salle` "
+                . "WHERE id_salle = :id LIMIT 1";
+        
+        $args[':id'] = $id;
+        try {
+            $stmt = $this->pdo->prepare($query);
+            $stmt->execute($args);
             $tab = $stmt->fetchAll();
             return($tab);
         } catch (Exception $e) {

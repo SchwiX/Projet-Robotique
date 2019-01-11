@@ -112,10 +112,10 @@
                                 <input type="submit" class="form-control btn btn-primary submit" id="submit_conf" value="Modifier">
                             </div>
                             <div class="col-sm-2">
-                                <input type="reset" class="form-control btn btn-primary" id="reset_conf" value="recommencer">
+                                <input type="reset" class="form-control btn btn-primary" id="reset_conf" value="Effacer">
                             </div>
                             <div class="col-sm-2">
-                                <a class="form-control btn btn-danger" href="affichage_cours.php">Quitter</a>
+                                <a class="form-control btn btn-danger" href="affichage_cours.php">Retour</a>
                             </div>
                         </div>
                     </form>
