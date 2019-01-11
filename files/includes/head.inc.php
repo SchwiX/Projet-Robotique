@@ -66,7 +66,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cours<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="<?php echo URL; ?>cours/affichage_cours.php">Liste & modification des cours</a></li>
-                                <li><a class="dropdown-item" href="<?php echo URL; ?>cours/add_cours.php">Ajouter un cour</a></li>
+                                <li><a class="dropdown-item" href="<?php echo URL; ?>cours/add_cours.php">Ajouter un cours</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="<?php echo URL; ?>logout.php">Déconnection</a></li>

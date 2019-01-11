@@ -30,9 +30,9 @@ require_once(WAY . "/includes/head.inc.php");
 
                     <!-- Abréviation -->
                     <div class="form-group row">
-                        <label for="abr_fnc" class="col-sm-2 col-form-label">Abreviation de la fonction</label>
+                        <label for="abr_fnc" class="col-sm-2 col-form-label">Abréviation de la fonction</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="abr_fnc" name="abr_fnc" placeholder="Abreviation">
+                            <input type="text" class="form-control" id="abr_fnc" name="abr_fnc" placeholder="Abréviation">
                         </div>
                     </div>
 

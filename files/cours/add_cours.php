@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="ref_classe" class="col-sm-2 col-form-label">Classes</label>
+                    <label for="ref_classe" class="col-sm-2 col-form-label">Classe</label>
                     <div class="col-sm-10">
                         <select class="form-control" id="ref_classe" name="ref_classe">
                             <?php

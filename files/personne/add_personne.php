@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="prenom_per" class="col-sm-2 col-form-label">Prenom</label>
+                    <label for="prenom_per" class="col-sm-2 col-form-label">Prénom</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="prenom_per" name="prenom_per" placeholder="Prénom">
                     </div>
@@ -51,7 +51,7 @@
                 <div class="form-group row">
                     <label for="lieu_per" class="col-sm-2 col-form-label">Ville</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="lieu_per" name="lieu_per" placeholder="Mail">
+                        <input type="text" class="form-control" id="lieu_per" name="lieu_per" placeholder="Ville">
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
                 <div class="form-group row">
                     <label for="mail_per" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="mail_per" name="mail_per" placeholder="Mail">
+                        <input type="text" class="form-control" id="mail_per" name="mail_per" placeholder="Email">
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@
                     <input type="submit" class="form-control btn btn-primary submit" id="submit_conf" value="Modifier">
                 </div>
                 <div class="col-sm-2">
-                    <input type="reset" class="form-control btn btn-warning" id="reset_conf" value="Anuller">
+                    <input type="reset" class="form-control btn btn-warning" id="reset_conf" value="Annuler">
                 </div>
             </div>
     </div>

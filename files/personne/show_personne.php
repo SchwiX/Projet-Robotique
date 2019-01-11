@@ -16,7 +16,7 @@
         <table class="table table-bordered text-center">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">Name & Surname</th>
+                    <th scope="col">Nom & Prénom</th>
                     <th scope="col">Email</th>
                     <th scope="col">Adresse</th>
                     <th scope="col">NPA</th>
