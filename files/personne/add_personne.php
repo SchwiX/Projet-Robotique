@@ -88,7 +88,7 @@
             <!-- Bouton submit et reset -->
             <div class="form-group row">
                 <div class="col-sm-offset-6 col-sm-2">
-                    <input type="submit" class="form-control btn btn-primary submit" id="submit_conf" value="Modifier">
+                    <input type="submit" class="form-control btn btn-primary submit" id="submit_conf" value="Ajouter">
                 </div>
                 <div class="col-sm-2">
                     <input type="reset" class="form-control btn btn-warning" id="reset_conf" value="Annuler">

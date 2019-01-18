@@ -58,7 +58,7 @@
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Personnes<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="<?php echo URL; ?>personne/show_personne.php">Liste & modification des personnes</a></li>
+                                <li><a class="dropdown-item" href="<?php echo URL; ?>personne/show_personne.php">Liste des personnes</a></li>
                                 <li><a class="dropdown-item" href="<?php echo URL; ?>personne/add_personne.php">Ajouter une personne</a></li>
                             </ul>
                         </li>
